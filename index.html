@@ -5,78 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARBV PRIVATE INSTALLER</title>
     <style>
-        body { background: #080808; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .window { width: 90%; max-width: 450px; background: #121212; border: 1px solid #333; border-radius: 12px; overflow: hidden; box-shadow: 0 0 50px #000; }
-        
-        .header { background: #1a1a1a; padding: 15px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #252525; }
-        .header img { height: 35px; border-radius: 6px; border: 1px solid #444; }
-        .header b { font-size: 16px; color: #0078d7; letter-spacing: 1px; }
-
+        body { background: #080808; color: #fff; font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .window { width: 90%; max-width: 420px; background: #121212; border: 1px solid #333; border-radius: 10px; overflow: hidden; box-shadow: 0 0 50px #000; }
+        .header { background: #1a1a1a; padding: 15px; border-bottom: 1px solid #252525; display: flex; align-items: center; gap: 10px; }
+        .header img { height: 35px; border-radius: 4px; }
+        .header b { color: #0078d7; font-size: 16px; }
         .content { padding: 30px 20px; text-align: center; }
-        h1 { font-size: 20px; margin: 0 0 10px 0; color: #fff; }
-        .status { font-size: 12px; color: #0f0; margin-bottom: 25px; display: flex; align-items: center; justify-content: center; gap: 5px; }
-        .status::before { content: ""; width: 8px; height: 8px; background: #0f0; border-radius: 50%; display: inline-block; box-shadow: 0 0 10px #0f0; }
-
-        /* Nút tải trực tiếp - Không qua web trung gian */
-        .dl-section { display: flex; flex-direction: column; gap: 15px; }
-        .dl-btn { 
-            background: #1a1a1a; border: 1px solid #333; padding: 18px; border-radius: 8px; 
-            text-decoration: none; color: #fff; transition: 0.3s; display: flex; align-items: center; justify-content: space-between;
-        }
-        .dl-btn:hover { border-color: #0078d7; background: #222; transform: scale(1.02); }
-        .dl-btn b { font-size: 14px; color: #0078d7; }
-        .dl-btn span { font-size: 10px; color: #666; }
-
-        .script-copy { margin-top: 25px; padding: 15px; background: #000; border-radius: 6px; border: 1px dashed #333; }
-        .copy-button { width: 100%; background: #0078d7; border: none; color: white; padding: 10px; border-radius: 4px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        .btn-dl { display: block; background: #0078d7; color: #fff; text-decoration: none; padding: 15px; border-radius: 6px; font-weight: bold; margin-bottom: 15px; }
+        .btn-copy { background: #0078d7; border: none; color: #fff; padding: 15px; width: 100%; border-radius: 6px; font-weight: bold; cursor: pointer; }
+        .footer { margin-top: 25px; font-size: 10px; color: #333; }
     </style>
 </head>
 <body>
-
 <div class="window">
     <div class="header">
         <img src="8944.jpg" alt="Logo">
         <b>ARBV EXECUTOR</b>
     </div>
-    
     <div class="content">
-        <h1>INSTALLER SYSTEM</h1>
-        <div class="status">Hệ thống đang hoạt động</div>
-
-        <div class="dl-section">
-            <a href="ARBV_VNG.apk" class="dl-btn">
-                <div style="text-align: left;">
-                    <b>ARBV VNG REAL</b>
-                    <span>Tải trực tiếp file .APK</span>
-                </div>
-                <div style="font-size: 20px;">⬇️</div>
-            </a>
-
-            <a href="ARBV_Global.apk" class="dl-btn">
-                <div style="text-align: left;">
-                    <b>ARBV QUỐC TẾ</b>
-                    <span>Tải trực tiếp file .APK</span>
-                </div>
-                <div style="font-size: 20px;">⬇️</div>
-            </a>
+        <h2 style="font-size: 18px; margin-bottom: 20px;">INSTALLER SYSTEM</h2>
+        <p style="color: #0f0; font-size: 13px;">● Hệ thống đang hoạt động</p>
+        
+        <a href="ARBV_Global.apk" class="btn-dl">TẢI ARBV QUỐC TẾ (.APK)</a>
+        
+        <div style="margin-top: 25px; border: 1px dashed #333; padding: 15px; border-radius: 8px;">
+            <span style="font-size: 11px; color: #666;">BƯỚC 2: SAO CHÉP MÃ KÍCH HOẠT</span>
+            <button class="btn-copy" onclick="copyScript()">SAO CHÉP SCRIPT ARBV</button>
         </div>
-
-        <div class="script-copy">
-            <span style="font-size: 11px; color: #555;">BƯỚC 2: SAO CHÉP MÃ KÍCH HOẠT</span>
-            <button class="copy-button" onclick="copyScript()">SAO CHÉP SCRIPT ARBV</button>
-        </div>
-
-        <p style="margin-top: 25px; font-size: 10px; color: #333;">NGIAPHAT788 DEVELOPER © 2026</p>
+        <div class="footer">NGIAPHAT788 DEVELOPER © 2026</div>
     </div>
 </div>
-
 <script>
 function copyScript() {
     const code = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/ngiaphat788-creator/ARBV/main/load.lua"))()';
     navigator.clipboard.writeText(code);
-    alert("Đã sao chép Script ARBV!");
+    alert("Đã sao chép Script ARBV! Hãy dán vào Executor trong game.");
 }
 </script>
-
 </body>
 </html>
