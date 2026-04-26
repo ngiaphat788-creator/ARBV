@@ -1,2 +1,22 @@
 # ARBV
-ARBV
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ARBV PRIVATE V5</title>
+    <style>
+        body { background-color: #000; color: #00f2fe; font-family: sans-serif; text-align: center; padding: 50px; }
+        .btn { display: inline-block; padding: 15px 30px; background: #00f2fe; color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; margin: 10px; box-shadow: 0 0 20px #00f2fe; }
+    </style>
+</head>
+<body>
+    <h1>ARBV PRIVATE V5</h1>
+    <p>The Server Destroyer - Beyond SF</p>
+    <br>
+    <a href="#" class="btn">DOWNLOAD MOBILE</a>
+    <a href="#" class="btn">DOWNLOAD PC</a>
+    <br><br><br>
+    <a href="#" style="color:#fff; text-decoration: none;">> GET ACCESS KEY <</a>
+</body>
+</html>
+
