@@ -1,31 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARBV EXPLOIT - DOWNLOAD</title>
+    <title>ARBV EXECUTOR v5.0</title>
     <style>
-        body { background: #000; color: #0f0; font-family: 'Courier New', monospace; text-align: center; padding: 20px; }
-        .mod-box { border: 2px solid #0f0; padding: 20px; border-radius: 15px; background: #111; box-shadow: 0 0 20px #0f0; display: inline-block; width: 90%; }
-        .btn-dl { display: block; background: #0f0; color: #000; padding: 15px; margin-top: 20px; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 18px; }
-        .features { text-align: left; margin-top: 15px; font-size: 13px; border-left: 3px solid #0f0; padding-left: 10px; }
+        * { box-sizing: border-box; }
+        body { background: #0a0a0a; color: #fff; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .krnl-window { width: 95%; max-width: 550px; height: 350px; background: #1c1c1c; border: 1px solid #333; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+        .title-bar { background: #252525; padding: 6px 12px; display: flex; justify-content: space-between; font-size: 12px; border-bottom: 1px solid #333; }
+        .main-content { display: flex; flex: 1; overflow: hidden; }
+        .sidebar { width: 45px; background: #202020; border-right: 1px solid #333; display: flex; flex-direction: column; align-items: center; padding-top: 15px; gap: 20px; }
+        .side-icon { width: 25px; height: 25px; opacity: 0.6; cursor: pointer; }
+        .side-icon:hover { opacity: 1; }
+        
+        .editor-container { flex: 1; display: flex; flex-direction: column; background: #151515; }
+        
+        /* Khu vực hiển thị Logo bên trong UI */
+        .ui-logo-header { padding: 10px; display: flex; align-items: center; gap: 10px; background: #1a1a1a; border-bottom: 1px solid #222; }
+        .ui-logo-header img { height: 30px; }
+        .ui-logo-header span { font-weight: bold; color: #fff; font-size: 14px; letter-spacing: 2px; }
+
+        textarea { width: 100%; flex: 1; background: transparent; color: #ced444; border: none; padding: 12px; font-family: 'Consolas', monospace; outline: none; resize: none; font-size: 13px; line-height: 1.5; }
+        .bottom-bar { background: #252525; padding: 8px; display: flex; gap: 8px; border-top: 1px solid #333; }
+        .krnl-btn { background: #333; color: #ddd; border: 1px solid #444; padding: 4px 15px; font-size: 11px; cursor: pointer; transition: 0.2s; }
+        .krnl-btn:hover { background: #0078d7; color: white; border-color: #0078d7; }
+        .get-key-link { margin-left: auto; color: #0078d7; font-size: 11px; text-decoration: none; align-self: center; font-weight: bold; }
     </style>
 </head>
 <body>
-    <div class="mod-box">
-        <h1>ROBLOX ARBV MOD MENU</h1>
-        <p style="color: #888;">Version: v2.615 (APKMody Base)</p>
-        
-        <div class="features">
-            • Mod Menu hiện trên màn hình<br>
-            • Fly (Bay), Wallhack (Xuyên tường)<br>
-            • God Mode (Bất tử - Tùy game)<br>
-            • Anti-Ban System
-        </div>
 
-        <a href="https://apkmody.com/vi/game/roblox/download" class="btn-dl">TẢI ARBV MOD MENU (APK)</a>
+    <div class="krnl-window">
+        <div class="title-bar">
+            <span>ARBV EXECUTOR v5.0</span>
+            <span style="color: #666;">_ □ X</span>
+        </div>
+        
+        <div class="main-content">
+            <div class="sidebar">
+                <div style="width:20px; height:20px; background:#0078d7; border-radius:3px;"></div>
+                <div style="width:20px; height:20px; background:#444; border-radius:3px;"></div>
+                <div style="width:20px; height:20px; background:#444; border-radius:3px;"></div>
+            </div>
+            
+            <div class="editor-container">
+                <div class="ui-logo-header">
+                    <img src="logo.png" alt="ARBV Logo"> 
+                    <span>ARBV PRIVATE</span>
+                </div>
+                
+                <textarea spellcheck="false">-- ARBV KRNL EDITION
+-- Logo integrated successfully
+print("Welcome, Master!")</textarea>
+            </div>
+        </div>
+        
+        <div class="bottom-bar">
+            <button class="krnl-btn" onclick="alert('Injecting ARBV...')">Inject</button>
+            <button class="krnl-btn" onclick="alert('Executing Script...')">Execute</button>
+            <button class="krnl-btn">Clear</button>
+            <a href="https://linkvertise.com" class="get-key-link">GET KEY »</a>
+        </div>
     </div>
 
-    <p style="margin-top: 30px; font-size: 12px;">© 2026 ARBV - Dev by Ngiaphat788</p>
-    <p>Have a beautiful day!</p>
 </body>
 </html>
