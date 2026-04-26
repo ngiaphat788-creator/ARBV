@@ -3,63 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARBV INSTALLER v5.1</title>
+    <title>ARBV PRIVATE INSTALLER</title>
     <style>
-        body { background: #0a0a0a; color: #fff; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .installer-box { width: 90%; max-width: 450px; background: #161616; border: 1px solid #333; border-radius: 8px; box-shadow: 0 0 40px #000; overflow: hidden; }
-        .header { background: #1e1e1e; padding: 15px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #282828; }
-        .header img { height: 30px; border-radius: 4px; }
-        .content { padding: 25px; }
-        .step { background: #222; border: 1px solid #333; padding: 15px; border-radius: 6px; margin-bottom: 15px; position: relative; }
-        .step-num { position: absolute; right: 15px; top: 15px; font-weight: bold; color: #0078d7; font-size: 20px; opacity: 0.3; }
-        h2 { font-size: 14px; color: #0078d7; margin: 0 0 10px 0; }
-        p { font-size: 11px; color: #888; margin: 0; }
+        body { background: #080808; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .window { width: 90%; max-width: 450px; background: #121212; border: 1px solid #333; border-radius: 12px; overflow: hidden; box-shadow: 0 0 50px #000; }
         
-        .btn { 
-            display: block; width: 100%; padding: 10px; background: #0078d7; color: white; 
-            text-align: center; text-decoration: none; border-radius: 4px; font-size: 12px; 
-            font-weight: bold; margin-top: 10px; border: none; cursor: pointer;
+        .header { background: #1a1a1a; padding: 15px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #252525; }
+        .header img { height: 35px; border-radius: 6px; border: 1px solid #444; }
+        .header b { font-size: 16px; color: #0078d7; letter-spacing: 1px; }
+
+        .content { padding: 30px 20px; text-align: center; }
+        h1 { font-size: 20px; margin: 0 0 10px 0; color: #fff; }
+        .status { font-size: 12px; color: #0f0; margin-bottom: 25px; display: flex; align-items: center; justify-content: center; gap: 5px; }
+        .status::before { content: ""; width: 8px; height: 8px; background: #0f0; border-radius: 50%; display: inline-block; box-shadow: 0 0 10px #0f0; }
+
+        /* Nút tải trực tiếp - Không qua web trung gian */
+        .dl-section { display: flex; flex-direction: column; gap: 15px; }
+        .dl-btn { 
+            background: #1a1a1a; border: 1px solid #333; padding: 18px; border-radius: 8px; 
+            text-decoration: none; color: #fff; transition: 0.3s; display: flex; align-items: center; justify-content: space-between;
         }
-        .btn-secondary { background: #333; border: 1px solid #444; }
-        
-        .footer { text-align: center; padding: 10px; font-size: 10px; color: #444; border-top: 1px solid #222; }
+        .dl-btn:hover { border-color: #0078d7; background: #222; transform: scale(1.02); }
+        .dl-btn b { font-size: 14px; color: #0078d7; }
+        .dl-btn span { font-size: 10px; color: #666; }
+
+        .script-copy { margin-top: 25px; padding: 15px; background: #000; border-radius: 6px; border: 1px dashed #333; }
+        .copy-button { width: 100%; background: #0078d7; border: none; color: white; padding: 10px; border-radius: 4px; font-weight: bold; cursor: pointer; margin-top: 10px; }
     </style>
 </head>
 <body>
 
-<div class="installer-box">
+<div class="window">
     <div class="header">
         <img src="8944.jpg" alt="Logo">
-        <div>
-            <b style="font-size: 14px; display: block;">ARBV INSTALLER</b>
-            <span style="font-size: 10px; color: #666;">Version 5.1 Private Edition</span>
-        </div>
+        <b>ARBV EXECUTOR</b>
     </div>
-
+    
     <div class="content">
-        <div class="step">
-            <div class="step-num">01</div>
-            <h2>TẢI CLIENT HỖ TRỢ</h2>
-            <p>Tải bộ nạp hack tương thích với ARBV (VNG & QT)</p>
-            <a href="RobloxLatestClientDownloader.zip" class="btn">TẢI XUỐNG (.ZIP)</a>
+        <h1>INSTALLER SYSTEM</h1>
+        <div class="status">Hệ thống đang hoạt động</div>
+
+        <div class="dl-section">
+            <a href="ARBV_VNG.apk" class="dl-btn">
+                <div style="text-align: left;">
+                    <b>ARBV VNG REAL</b>
+                    <span>Tải trực tiếp file .APK</span>
+                </div>
+                <div style="font-size: 20px;">⬇️</div>
+            </a>
+
+            <a href="ARBV_Global.apk" class="dl-btn">
+                <div style="text-align: left;">
+                    <b>ARBV QUỐC TẾ</b>
+                    <span>Tải trực tiếp file .APK</span>
+                </div>
+                <div style="font-size: 20px;">⬇️</div>
+            </a>
         </div>
 
-        <div class="step">
-            <div class="step-num">02</div>
-            <h2>KÍCH HOẠT ARBV HACK</h2>
-            <p>Sao chép mã lệnh để gắn vào Roblox Client</p>
-            <button class="btn btn-secondary" onclick="copyScript()">SAO CHÉP SCRIPT</button>
+        <div class="script-copy">
+            <span style="font-size: 11px; color: #555;">BƯỚC 2: SAO CHÉP MÃ KÍCH HOẠT</span>
+            <button class="copy-button" onclick="copyScript()">SAO CHÉP SCRIPT ARBV</button>
         </div>
+
+        <p style="margin-top: 25px; font-size: 10px; color: #333;">NGIAPHAT788 DEVELOPER © 2026</p>
     </div>
-
-    <div class="footer">DEVELOPED BY NGIAPHAT788 • 2026</div>
 </div>
 
 <script>
 function copyScript() {
     const code = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/ngiaphat788-creator/ARBV/main/load.lua"))()';
     navigator.clipboard.writeText(code);
-    alert("Đã sao chép Script ARBV thành công!");
+    alert("Đã sao chép Script ARBV!");
 }
 </script>
 
