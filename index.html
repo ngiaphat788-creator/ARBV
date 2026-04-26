@@ -3,65 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARBV EXECUTOR v5.0</title>
+    <title>KRNL - ARBV EDITION</title>
     <style>
-        * { box-sizing: border-box; }
-        body { background: #0a0a0a; color: #fff; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .krnl-window { width: 95%; max-width: 550px; height: 350px; background: #1c1c1c; border: 1px solid #333; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
-        .title-bar { background: #252525; padding: 6px 12px; display: flex; justify-content: space-between; font-size: 12px; border-bottom: 1px solid #333; }
-        .main-content { display: flex; flex: 1; overflow: hidden; }
-        .sidebar { width: 45px; background: #202020; border-right: 1px solid #333; display: flex; flex-direction: column; align-items: center; padding-top: 15px; gap: 20px; }
-        .side-icon { width: 25px; height: 25px; opacity: 0.6; cursor: pointer; }
-        .side-icon:hover { opacity: 1; }
-        
-        .editor-container { flex: 1; display: flex; flex-direction: column; background: #151515; }
-        
-        /* Khu vực hiển thị Logo bên trong UI */
-        .ui-logo-header { padding: 10px; display: flex; align-items: center; gap: 10px; background: #1a1a1a; border-bottom: 1px solid #222; }
-        .ui-logo-header img { height: 30px; }
-        .ui-logo-header span { font-weight: bold; color: #fff; font-size: 14px; letter-spacing: 2px; }
+        body { 
+            margin: 0; 
+            height: 100vh; 
+            background: #050505; /* Nền tối hẳn như màn hình tắt */
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-        textarea { width: 100%; flex: 1; background: transparent; color: #ced444; border: none; padding: 12px; font-family: 'Consolas', monospace; outline: none; resize: none; font-size: 13px; line-height: 1.5; }
-        .bottom-bar { background: #252525; padding: 8px; display: flex; gap: 8px; border-top: 1px solid #333; }
-        .krnl-btn { background: #333; color: #ddd; border: 1px solid #444; padding: 4px 15px; font-size: 11px; cursor: pointer; transition: 0.2s; }
-        .krnl-btn:hover { background: #0078d7; color: white; border-color: #0078d7; }
-        .get-key-link { margin-left: auto; color: #0078d7; font-size: 11px; text-decoration: none; align-self: center; font-weight: bold; }
+        /* Cửa sổ KRNL thiết kế cực chuẩn */
+        .executor {
+            width: 580px;
+            height: 340px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.9);
+        }
+
+        /* Thanh tiêu đề giống Windows */
+        .header {
+            background: #2b2b2b;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+            font-size: 11px;
+            color: #ccc;
+            border-bottom: 1px solid #3a3a3a;
+        }
+
+        .window-controls span { margin-left: 10px; cursor: pointer; }
+
+        /* Nội dung chính chia 3 phần: Sidebar - Editor - Script List */
+        .content { display: flex; flex: 1; background: #151515; }
+
+        .side-icons {
+            width: 45px;
+            background: #1e1e1e;
+            border-right: 1px solid #2a2a2a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 15px;
+            gap: 20px;
+        }
+
+        .icon { width: 22px; height: 22px; background: #444; border-radius: 4px; transition: 0.3s; }
+        .icon.active { background: #0078d7; box-shadow: 0 0 8px #0078d7; }
+
+        /* Trình soạn thảo script */
+        .editor-area { flex: 1; position: relative; }
+        textarea {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            color: #ced444; /* Màu chữ KRNL đặc trưng */
+            padding: 15px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 13px;
+            outline: none;
+            resize: none;
+        }
+
+        /* Danh sách script bên phải */
+        .script-list {
+            width: 140px;
+            background: #1a1a1a;
+            border-left: 1px solid #2a2a2a;
+            padding: 10px;
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        .script-item {
+            padding: 5px;
+            border-bottom: 1px solid #252525;
+            cursor: pointer;
+        }
+        .script-item:hover { color: #fff; background: #252525; }
+
+        /* Thanh điều khiển dưới cùng */
+        .footer {
+            height: 45px;
+            background: #202020;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            gap: 8px;
+            border-top: 1px solid #333;
+        }
+
+        .btn {
+            background: #333;
+            color: #eee;
+            border: 1px solid #444;
+            padding: 5px 15px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn:hover { background: #444; border-color: #0078d7; color: #fff; }
+
+        .logo-small { height: 20px; margin-right: 10px; opacity: 0.8; }
     </style>
 </head>
 <body>
 
-    <div class="krnl-window">
-        <div class="title-bar">
-            <span>ARBV EXECUTOR v5.0</span>
-            <span style="color: #666;">_ □ X</span>
+<div class="executor">
+    <div class="header">
+        <div style="display:flex; align-items:center;">
+            <img src="logo.png" class="logo-small"> <span>ARBV EXECUTOR - v5.1</span>
         </div>
-        
-        <div class="main-content">
-            <div class="sidebar">
-                <div style="width:20px; height:20px; background:#0078d7; border-radius:3px;"></div>
-                <div style="width:20px; height:20px; background:#444; border-radius:3px;"></div>
-                <div style="width:20px; height:20px; background:#444; border-radius:3px;"></div>
-            </div>
-            
-            <div class="editor-container">
-                <div class="ui-logo-header">
-                    <img src="logo.png" alt="ARBV Logo"> 
-                    <span>ARBV PRIVATE</span>
-                </div>
-                
-                <textarea spellcheck="false">-- ARBV KRNL EDITION
--- Logo integrated successfully
-print("Welcome, Master!")</textarea>
-            </div>
-        </div>
-        
-        <div class="bottom-bar">
-            <button class="krnl-btn" onclick="alert('Injecting ARBV...')">Inject</button>
-            <button class="krnl-btn" onclick="alert('Executing Script...')">Execute</button>
-            <button class="krnl-btn">Clear</button>
-            <a href="https://linkvertise.com" class="get-key-link">GET KEY »</a>
+        <div class="window-controls">
+            <span>—</span> <span>▢</span> <span style="color:#ff4444">X</span>
         </div>
     </div>
 
+    <div class="content">
+        <div class="side-icons">
+            <div class="icon active"></div>
+            <div class="icon"></div>
+            <div class="icon"></div>
+            <div class="icon"></div>
+        </div>
+        
+        <div class="editor-area">
+            <textarea spellcheck="false">-- ARBV KRNL PRIVATE
+print("System Injected!")
+warn("Welcome Master Ngiaphat788")</textarea>
+        </div>
+
+        <div class="script-list">
+            <div style="font-weight:bold; color:#0078d7; margin-bottom:10px;">Scripts</div>
+            <div class="script-item">Fly.lua</div>
+            <div class="script-item">Aimbot.lua</div>
+            <div class="script-item">Speed.lua</div>
+            <div class="script-item">InfiniteYield.lua</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <button class="btn" onclick="alert('Executing...')">Execute</button>
+        <button class="btn">Clear</button>
+        <button class="btn">Open File</button>
+        <button class="btn">Save File</button>
+        <button class="btn" style="margin-left:auto; background:#0078d7; color:white; border:none;">Inject</button>
+    </div>
+</div>
+
 </body>
 </html>
+
