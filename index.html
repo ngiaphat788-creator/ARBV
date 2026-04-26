@@ -3,75 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARBV EXECUTOR - HUB</title>
+    <title>ARBV INSTALLER v5.1</title>
     <style>
-        body { background: #050505; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .window { width: 92%; max-width: 480px; background: #121212; border: 1px solid #282828; border-radius: 8px; box-shadow: 0 0 50px #000; overflow: hidden; }
+        body { background: #0a0a0a; color: #fff; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .installer-box { width: 90%; max-width: 450px; background: #161616; border: 1px solid #333; border-radius: 8px; box-shadow: 0 0 40px #000; overflow: hidden; }
+        .header { background: #1e1e1e; padding: 15px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #282828; }
+        .header img { height: 30px; border-radius: 4px; }
+        .content { padding: 25px; }
+        .step { background: #222; border: 1px solid #333; padding: 15px; border-radius: 6px; margin-bottom: 15px; position: relative; }
+        .step-num { position: absolute; right: 15px; top: 15px; font-weight: bold; color: #0078d7; font-size: 20px; opacity: 0.3; }
+        h2 { font-size: 14px; color: #0078d7; margin: 0 0 10px 0; }
+        p { font-size: 11px; color: #888; margin: 0; }
         
-        /* Thanh tiêu đề phong cách KRNL */
-        .header { background: #1e1e1e; padding: 12px 15px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #282828; }
-        .header-left { display: flex; align-items: center; gap: 10px; }
-        .header-left img { height: 22px; border-radius: 2px; }
-        .header-left span { font-size: 11px; color: #888; letter-spacing: 1px; }
-        .controls { color: #444; font-size: 14px; }
-
-        .content { padding: 30px 20px; text-align: center; }
-        h1 { font-size: 22px; color: #0078d7; margin: 0 0 10px 0; font-weight: 900; text-transform: uppercase; }
-        .subtitle { font-size: 13px; color: #666; margin-bottom: 30px; }
-
-        /* Chia 2 khu vực tải: VNG và Quốc tế */
-        .download-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .card { 
-            background: #1a1a1a; border: 1px solid #333; padding: 20px 10px; border-radius: 5px; 
-            text-decoration: none; color: #fff; transition: 0.3s ease; display: flex; flex-direction: column; align-items: center;
+        .btn { 
+            display: block; width: 100%; padding: 10px; background: #0078d7; color: white; 
+            text-align: center; text-decoration: none; border-radius: 4px; font-size: 12px; 
+            font-weight: bold; margin-top: 10px; border: none; cursor: pointer;
         }
-        .card:hover { border-color: #0078d7; background: #222; transform: translateY(-5px); }
-        .card b { font-size: 14px; color: #0078d7; margin-bottom: 8px; }
-        .card span { font-size: 10px; color: #555; margin-bottom: 15px; height: 25px; line-height: 1.2; }
+        .btn-secondary { background: #333; border: 1px solid #444; }
         
-        .btn-download { 
-            width: 100%; background: #0078d7; color: #fff; padding: 8px; 
-            font-size: 11px; font-weight: bold; border-radius: 3px; 
-        }
-        .btn-intl { background: #333; border: 1px solid #444; }
-
-        .footer { margin-top: 30px; font-size: 10px; color: #333; letter-spacing: 1px; }
+        .footer { text-align: center; padding: 10px; font-size: 10px; color: #444; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
 
-<div class="window">
+<div class="installer-box">
     <div class="header">
-        <div class="header-left">
-            <img src="8944.jpg" alt="ARBV">
-            <span>ARBV PRIVATE SYSTEM v5.1</span>
+        <img src="8944.jpg" alt="Logo">
+        <div>
+            <b style="font-size: 14px; display: block;">ARBV INSTALLER</b>
+            <span style="font-size: 10px; color: #666;">Version 5.1 Private Edition</span>
         </div>
-        <div class="controls">— □ X</div>
     </div>
-    
+
     <div class="content">
-        <h1>ROBLOX HACK CENTER</h1>
-        <div class="subtitle">Hệ thống nạp Script độc quyền của Ngiaphat788</div>
-
-        <div class="download-grid">
-            <a href="RobloxLatestClientDownloader.zip" class="card">
-                <b>HACK VNG</b>
-                <span>Dành cho bản Roblox VNG Chính thức</span>
-                <div class="btn-download">TẢI VỀ (.ZIP)</div>
-            </a>
-
-            <a href="https://apkmody.com/vi/game/roblox/download" class="card">
-                <b>HACK QUỐC TẾ</b>
-                <span>Dành cho bản Roblox Global</span>
-                <div class="btn-download btn-intl">TẢI VỀ (.APK)</div>
-            </a>
+        <div class="step">
+            <div class="step-num">01</div>
+            <h2>TẢI CLIENT HỖ TRỢ</h2>
+            <p>Tải bộ nạp hack tương thích với ARBV (VNG & QT)</p>
+            <a href="RobloxLatestClientDownloader.zip" class="btn">TẢI XUỐNG (.ZIP)</a>
         </div>
 
-        <div class="footer">DEVELOPED BY ARBV TEAM © 2026</div>
+        <div class="step">
+            <div class="step-num">02</div>
+            <h2>KÍCH HOẠT ARBV HACK</h2>
+            <p>Sao chép mã lệnh để gắn vào Roblox Client</p>
+            <button class="btn btn-secondary" onclick="copyScript()">SAO CHÉP SCRIPT</button>
+        </div>
     </div>
+
+    <div class="footer">DEVELOPED BY NGIAPHAT788 • 2026</div>
 </div>
 
-<p style="position: absolute; bottom: 15px; color: #222; font-size: 12px;">Have a beautiful day!</p>
+<script>
+function copyScript() {
+    const code = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/ngiaphat788-creator/ARBV/main/load.lua"))()';
+    navigator.clipboard.writeText(code);
+    alert("Đã sao chép Script ARBV thành công!");
+}
+</script>
 
 </body>
 </html>
