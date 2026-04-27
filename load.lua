@@ -1,38 +1,40 @@
--- [[ ARBV SYSTEM - C00LGUI EDITION ]] --
--- [[ CREATED BY NGIAPHAT788 DEVELOPER ]] --
+-- ==========================================
+-- ARBV PRIVATE V5 - KEY SYSTEM
+-- ==========================================
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local CorrectKey = "ARBV2026" 
+local EnteredKey = ""
 
--- CHUYỂN SANG BLOODTHEME CHO NÓ CHẤT
-local Window = Library.CreateLib("C00LGUI X ARBV - TUBERS93 EDITION", "BloodTheme")
+local KeyLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local KeyWindow = KeyLibrary.CreateLib("XÁC MINH ARBV PRIVATE V5", "DarkTheme")
+local KeyTab = KeyWindow:NewTab("Nhập Key")
+local KeySection = KeyTab:NewSection("Lấy Key tại GitHub ARBV")
 
--- TẠO CÁC TAB NHÌN NGUY HIỂM
-local Tab1 = Window:NewTab("HỦY DIỆT")
-local Section1 = Tab1:NewSection("Status: SẴN SÀNG BÁO")
-
-Section1:NewSlider("TỐC ĐỘ (SPEED)", "Chỉnh tốc độ chạy", 1000, 16, function(s)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+KeySection:NewTextBox("Nhập Key tại đây:", "Mật khẩu là gì?", function(txt)
+    EnteredKey = txt
 end)
 
-Section1:NewSlider("NHẢY CAO (JUMP)", "Chỉnh lực nhảy", 1000, 50, function(s)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
-    game.Players.LocalPlayer.Character.Humanoid.UseJumpPower = true
-end)
+KeySection:NewButton("BẮT ĐẦU HACK", "Nhấn để xác nhận", function()
+    if EnteredKey == CorrectKey then
+        KeyWindow:Destroy() 
+        
+        -- ĐÂY LÀ NƠI CHỨA CODE MENU CHÍNH CỦA BRO
+        local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+        local Window = Library.CreateLib("ARBV PRIVATE V5", "Midnight")
 
-local Tab2 = Window:NewTab("BAY LƯỢN")
-local Section2 = Tab2:NewSection("Nút Bay của Tubers93")
+        local Main = Window:NewTab("Tính năng chính")
+        local Section = Main:NewSection("Người dùng: Thiên tài ngầm")
 
-Section2:NewButton("BẬT BAY (FLY)", "Bật Infinite Yield", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Edgeiy/infiniteyield/master/source"))()
-end)
+        Section:NewSlider("Tốc độ (Speed)", "Chạy nhanh như bão", 500, 16, function(s)
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+        end)
 
-local Tab3 = Window:NewTab("THÔNG TIN")
-local Section3 = Tab3:NewSection("Hacker Info")
-Section3:NewLabel("Hacker: Ngiaphat788")
-Section3:NewLabel("Hỗ trợ: VNG / GLOBAL")
-Section3:NewLabel("Phiên bản: 6.6.6") -- Số đẹp cho giống c00lgui
-
--- PHÍM TẮT ĐỂ GIẤU BẢNG (Right Control)
-Section3:NewKeybind("Phím Ẩn Menu", "Nhấn R-Ctrl", Enum.KeyCode.RightControl, function()
-	Library:ToggleUI()
+        Section:NewButton("Nhảy cao (Jump)", "Bay lên trời", function()
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 100
+        end)
+        
+        print("ARBV: Đã kích hoạt thành công!")
+    else
+        print("Sai mã rồi bro ơi!")
+    end
 end)
